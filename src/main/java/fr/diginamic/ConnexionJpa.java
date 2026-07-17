@@ -10,5 +10,9 @@ public class ConnexionJpa {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("compta");
 
         EntityManager em = entityManagerFactory.createEntityManager();
+
+        Region region = em.find(Region.class, 1);
+
+        System.out.println(region.getNom());
     }
 }
