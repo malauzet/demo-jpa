@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "LIVRE")
 @Getter
@@ -18,6 +21,9 @@ public class Livre {
     private String titre;
 
     private String auteur;
+
+    @ManyToMany(mappedBy = "livres")
+    private List<Emprunt> emprunts = new ArrayList<>();
 
     @Override
     public String toString() {
