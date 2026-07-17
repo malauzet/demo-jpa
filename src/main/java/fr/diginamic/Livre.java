@@ -1,9 +1,15 @@
 package fr.diginamic;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "LIVRE")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Livre {
 
     @Id
@@ -12,33 +18,6 @@ public class Livre {
     private String titre;
 
     private String auteur;
-
-    public Livre() {
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTitre() {
-        return titre;
-    }
-
-    public void setTitre(String titre) {
-        this.titre = titre;
-    }
-
-    public String getAuteur() {
-        return auteur;
-    }
-
-    public void setAuteur(String auteur) {
-        this.auteur = auteur;
-    }
 
     @Override
     public String toString() {

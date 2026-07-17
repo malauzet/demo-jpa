@@ -28,5 +28,8 @@ public class ConnexionJpa {
         for (Livre l : livres) {
             System.out.println(l);
         }
+
+        emb.close();
+        entityManagerFactory.close();
     }
 }
