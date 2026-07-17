@@ -29,6 +29,14 @@ public class ConnexionJpa {
             System.out.println(l);
         }
 
+        Client client = emb.find(Client.class, 1);
+
+        System.out.println(client);
+
+        for (Emprunt emprunt : client.getEmprunts()) {
+            System.out.println("  -> " + emprunt);
+        }
+
         emb.close();
         entityManagerFactory.close();
     }
